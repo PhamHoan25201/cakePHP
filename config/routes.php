@@ -110,6 +110,9 @@ $routes->scope('/', function (RouteBuilder $builder) {
 	//Quên mật khẩu
 	$builder->connect('/forgotPassword', ['controller' => 'Authexs', 'action' => 'forgotPassword']);
 
+	//Set lại mật khẩu
+	$builder->connect('/resetPassword/:token',['controller'=>'Authexs','action'=>'resetPassword'], ["pass" => ["token"]]);
+
 	$builder->connect('pages/*', ['controller' => 'Pages', 'action' => 'display']);
 
 	$builder->fallbacks();

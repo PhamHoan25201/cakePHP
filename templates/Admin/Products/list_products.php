@@ -44,8 +44,7 @@ echo $this->element('serial');
 				<table id="tbl-users-list" class='table table-striped' id="table1">
 					<thead>
 						<tr>
-							<th>STT
-							<th>
+							<th>STT</th>
 							<th><?= $this->Paginator->sort('Products.product_name', 'Tên sản phẩm'); ?></th>
 							<th>Hình ảnh</th>
 							<th><?= $this->Paginator->sort('Products.description', 'Mô tả'); ?></th>
@@ -61,8 +60,7 @@ echo $this->element('serial');
 					<tbody>
 						<?php foreach ($query as $product) { ?>
 							<tr>
-								<td><?=$GLOBALS['n']++?>
-								<td>
+								<td><?=$GLOBALS['n']++?></td>
 								<td> <a><?= h($product['product_name']) ?></a></td>
 								<td>
 									<a>
@@ -73,7 +71,7 @@ echo $this->element('serial');
 										} ?>
 									</a>
 								</td>
-								<td><a><?= h(Text::excerpt($product['description'], 'method', 50, '...')); ?></a></td>
+								<td><a><?= h(Text::excerpt($product['description'], 'method', 22, '...')); ?></a></td>
 								<td><a><?= number_format(h($product['quantity_product'])) ?></a></td>
 								<td><a><?= number_format(h($product['amount_product'])) ?></a></td>
 								<td><a><?= number_format(h($product['point_product'])) ?></a></td>

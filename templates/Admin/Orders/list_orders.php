@@ -1,5 +1,5 @@
 <?php
-
+use Cake\Utility\Text;
 echo $this->element('Admin/header');
 echo $this->element('Admin/sidebar');
 echo $this->element('serial');
@@ -38,7 +38,7 @@ echo $this->element('serial');
 							<th><?= $this->Paginator->sort('Orders.order_name', 'Họ và tên'); ?></th>
 							<th><?= $this->Paginator->sort('Orders.email', 'Email'); ?></th>
 							<th><?= $this->Paginator->sort('Orders.phonenumber', 'Số điện thoại'); ?></th>
-							<th><?= $this->Paginator->sort('Orders.address', 'Địa chỉ'); ?></th>
+							<!-- <th><?= $this->Paginator->sort('Orders.address', 'Địa chỉ'); ?></th> -->
 							<th><?= $this->Paginator->sort('Orders.total_point', 'Tổng Point'); ?></th>
 							<th><?= $this->Paginator->sort('Orders.total_quantity', 'Tổng Số Lượng'); ?></th>
 							<th><?= $this->Paginator->sort('Orders.total_amount', 'Tổng giá'); ?></th>
@@ -51,9 +51,14 @@ echo $this->element('serial');
 							<tr class="list">
 								<td><?=$GLOBALS['n']++?></td>
 								<td><a><?= $order['order_name'] ?></a></td>
-								<td><a><?= $order['email'] ?></a></td>
+								<td><a title="<?= $order['email']?>"><?=Text::truncate($order['email'],12,
+										[
+										'ellipsis' => '...',
+											'exact' => false
+										]
+								);?></a></td>
 								<td><a><?= $order['phonenumber'] ?></a></td>
-								<td><a><?= $order['address'] ?></a></td>
+								<!-- <td><a><?= $order['address'] ?></a></td> -->
 								<td><a><?= $order['total_point'] ?></a></td>
 								<td><a><?= $order['total_quantity'] ?></a></td>
 								<td><a><?= '$'.number_format($order['total_amount']) ?></a></td>

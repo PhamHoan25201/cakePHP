@@ -421,7 +421,7 @@ class NormalUsersController extends AppController
 				$insertOrder = $this->{'Data'}->createOrdersNone($infoUser, $dataProds, $insertUser);
 				if (!$insertOrder['result'] == "invalid") {
 					$to = $infoUser['email'];
-					$toAdmin = 'tienphamvan2005@gmail.com';
+					$toAdmin = MAIL_ADMIN;
 					$subject = 'Mail Confirm Order';
 					$message = '
                      <!DOCTYPE html>
@@ -719,7 +719,7 @@ class NormalUsersController extends AppController
 				$this->{'Data'}->updatePoint($pointAF, $idUsers);
 				if (!$result['result'] == "invalid") {
 					$to = $dataUser[0]['email'];
-					$toAdmin = 'phamhoan020501@gmail.com';
+					$toAdmin = MAIL_ADMIN;
 					$subject = 'Mail Confirm Order';
 					$message = '
                     <!DOCTYPE html>
