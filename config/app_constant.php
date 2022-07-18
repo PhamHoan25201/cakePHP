@@ -1,9 +1,12 @@
 <?php
 /*/////////////// Pagination ////////////////////////*/
-const PAGINATE_LIMIT = '3';
+const PAGINATE_LIMIT = '5';
 
 /*/////////////// DOMAIN ////////////////////////*/
 const DOMAIN = 'https://test.com/';
+
+/*/////////////// Email Admin ////////////////////////*/
+const MAIL_ADMIN = 'phamhoan020501@gmail.com';
 
 /*/////////////// Message ////////////////////////*/
 
